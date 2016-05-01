@@ -4,7 +4,10 @@
 #define CLASSTREE_H
 
 using namespace std;
-
+struct dept{
+    string name;
+    int c;
+};
 struct ClassNode{
     string name;
     string department;
@@ -43,6 +46,7 @@ class ClassTree
         void enrollClass(string title); //calls addClassToSchedule in it's function
         void dropClass(string title);
         void addClassToSchedule(string name, string department, int courseNumber, string teacher, string time, string day);
+        void departments();
         void printClassSchedule();
     protected:
     private:
