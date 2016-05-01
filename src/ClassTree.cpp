@@ -171,3 +171,31 @@ void ClassTree::printClassSchedule(){
         }
     }
 }
+void ClassTree::departments(){
+    if(schedule.size() == 0){
+        cout<<"Your schedule is currently empty. Select option 2 to start adding classes to your schedule."<<endl;
+    }
+    else{
+
+        vector <dept> deps;
+        bool found;
+        for(int i = 0; i < schedule.size(); i++){
+            found=false;
+            for(int j=0;j<deps.size();j++){
+                if(deps[j].name==schedule[i].department){
+                    found=true;
+                    deps[j].c+=1;
+                }
+            }
+            if(!found){
+                dept n;
+                n.c=1;
+                n.name=schedule[i].department;
+                deps.push_back(n);
+            }
+        }
+        for(int i=0;i<deps.size();i++){
+            cout<<deps[i].name<<": "<<deps[i].c<<endl;
+        }
+    }
+}
